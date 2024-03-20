@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p> У вас нет достаточного уровня доступа в систему</p>
+  {% else %}
+    <p> Для доступа к этой странице - пожалуйста войдите в систему </p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}" id="loginform">
+{% csrf_token %}
+
+    <h3>Внешний доступ для сотрудников компании ГЕБО КОММЕРЦ</h3>
+<table>
+
+<tr>
+  <td>{{ form.username.label_tag }}</td>
+  <td>{{ form.username }}</td>
+</tr>
+
+<tr>
+  <td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td>
+</tr>
+
+
+    <tr>
+  <td colspan="2">
+     <input  class="loginsubmit" type="submit" value="Применить" />
+<input type="hidden" name="next" value="{{ next }}" />
+  </td>
+
+</tr>
+</table>
+
+
+</form>
+
+
+
+{% endblock %}

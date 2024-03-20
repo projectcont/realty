@@ -1,0 +1,27 @@
+
+<form action="/korp/formsent/" method="post" id="form-client">
+{% csrf_token %}
+    {{ form.non_field_errors }}
+    <div> <h3>  ЗАЯВКА НА ПРОСМОТР </h3> </div>
+	<div>
+	  <label for="client">Ваше имя:</label>
+<input type="text" name="client" maxlength="100" required id="id_client">
+	</div>
+
+	<div>
+	  <label for="phone">Ваш телефон:</label>
+        <input type="text" name="phone" required id="id_phone">
+
+        <input type="hidden" name="categ"  id="categ" value="{{item.categ}}">
+        <input type="hidden" name="idprop"  id="idprop" value="{{item.id}}">
+        <input type="hidden" name="titleprop"  id="titleprop" value="{{item.title}}">
+        <input type="hidden" name="adresprop"  id="adresprop" value="{{item.adres}}">
+
+	</div>
+
+
+
+<br/>
+	<div> <input type="submit" value="Отправить"/> </div>
+</form>
+

@@ -1,0 +1,14 @@
+{% extends 'base.html'  %}
+{%  load static %}
+
+
+{% block content %}
+
+<h1 style="margin:100px auto"> Ваша заявка отправлена. Мы свяжемся с Вами в ближайшее время <h1>
+{% autoescape off %}
+    {{ page.content }}
+{% endautoescape %}
+
+
+
+{% endblock %}

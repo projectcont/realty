@@ -1,0 +1,26 @@
+{% load static %}
+
+
+<h5> НАШИ ПАРТНЕРЫ   </h5>
+
+<div class="flexcontainer"   >
+
+
+ {% for n in partners %}
+    {% if n.is_published %}
+ <div >
+python manage.py runserver
+      <img src="{{n.photo.url}}"  alt="{{n.title}}" style="width:170px"   />
+
+ </div>
+    {% endif %}
+{%  endfor %}
+
+
+</div>  <!-- custompreim -->
+
+
+<style>  div.flexcontainer div  { border:0px solid brown ;  width:24%;  margin:auto; text-align:center }
+h5  {margin:20px auto;text-align:center}
+ </style>
+
